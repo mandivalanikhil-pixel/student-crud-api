@@ -34,3 +34,7 @@ jobs:
       - name: Test Application
         run: |
           python -c "from main import app; print('FastAPI application loaded successfully')"
+
+      - name: Deploy to Render
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
